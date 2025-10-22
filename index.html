@@ -1,13 +1,50 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>chrome-ia</title>
+    <title>Chrome built-in IA demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
   </head>
   <body>
-    <div id="app"></div>
+    <main class="container">
+      <article>
+        <header>
+          <h1>Demo</h1>
+        </header>
+
+        <form id="imageForm">
+          <label for="imageInput">
+            Select image
+            <input type="file" id="imageInput" accept="image/*" />
+          </label>
+
+          <div id="preview" style="display: none; margin: 1rem 0">
+            <img
+              id="previewImage"
+              style="
+                max-width: 100%;
+                max-height: 400px;
+                border-radius: var(--pico-border-radius);
+              "
+            />
+          </div>
+
+          <label>
+            Ask question
+            <input type="text" value="Describe the image" />
+          </label>
+          <button type="submit">GO</button>
+        </form>
+
+        <output></output>
+      </article>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
